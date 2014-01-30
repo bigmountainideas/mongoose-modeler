@@ -1,6 +1,6 @@
 {
   "name": "mongoose-modeler",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Mongoose Schema & Model management",
   "main": "lib/modeler.js",
   "dependencies": {
@@ -13,6 +13,16 @@
   "scripts": {
     "test": "make test"
   },
+  "keywords": [
+    "mongoose",
+    "mongodb",
+    "mongo",
+    "database"
+  ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "repository": "git://github.com/bigmountainideas/mongoose-modeler",
   "author": "Jovan Alleyne <jovan@bigmountainideas.com>",
   "license": "MIT"
 }
