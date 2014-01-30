@@ -89,4 +89,20 @@ describe('Modeler', function(){
   })
   
   
+  it('should autoload Models with require', function(done){
+    
+    var models = modeler( [
+      animals_db,
+      objects_db
+    ],[
+        require('./schemas/dogs'),
+        require('./schemas/toys')
+      ]);
+      
+      models.require('Dogs',  'animals').should.be.ok;
+      models.find('Toys',  'objects').should.be.ok;
+      
+      done()
+  })
+  
 })
