@@ -1,6 +1,6 @@
 {
   "name": "mongoose-modeler",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Mongoose Schema & Model management",
   "main": "lib/modeler.js",
   "dependencies": {
