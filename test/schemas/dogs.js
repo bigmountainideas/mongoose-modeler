@@ -6,11 +6,11 @@ module.exports = {
   dependencies: [
     'objects.Toys'
   ],
-  schema: function(modeler, Schema){
+  schema: function(modeler){
     
     var Toys = modeler.find('Toys', 'objects');
     
-    var schema = new Schema({
+    var schema = new mongoose.Schema({
       name: String,
       owner: {
         type: ObjectId,

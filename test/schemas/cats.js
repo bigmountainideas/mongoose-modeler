@@ -3,8 +3,8 @@ var mongoose = require('mongoose')
 ;
 
 module.exports = {
-  schema: function(modeler, Schema){
-    var schema = new Schema({
+  schema: function(modeler){
+    var schema = new mongoose.Schema({
       name : String,
       color: String,
       age: Number
