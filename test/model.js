@@ -88,6 +88,20 @@ describe('Modeler', function(){
       done()
   })
   
+  it('should throw error when database for Schema not defined', function(done){
+    
+    var models = modeler( [
+      animals_db
+    ],[
+        require('./schemas/toys')
+      ]);
+      
+      (function(){
+        models.require('Toys',  'objects');
+      }).should.throw(/Database connection \[objects\] has not been defined./i);
+      
+      done()
+  })
   
   it('should autoload Models with require', function(done){
     
