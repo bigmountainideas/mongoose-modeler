@@ -81,30 +81,45 @@ describe('Modeler', function(){
         require('./schemas/dogs'),
         require('./schemas/toys')
       ]);
-      
+
       models.find('Dogs',  'animals', true).should.be.ok;
       models.find('Toys',  'objects').should.be.ok;
-      
+
       done()
   })
-  
+
   it('should throw error when database for Schema not defined', function(done){
-    
+
     var models = modeler( [
       animals_db
     ],[
         require('./schemas/toys')
       ]);
-      
+
       (function(){
         models.require('Toys',  'objects');
-      }).should.throw(/Database connection \[objects\] has not been defined./i);
-      
+      }).should.throw(/Database \[objects\] is not connected or defined./i);
+
       done()
   })
-  
+
+
+  it('should throw error when database for Schema not defined, but autoloaded', function(done){
+
+      (function(){
+        var models = modeler( [
+          animals_db
+        ],[
+            require('./schemas/toys')
+          ], true);
+      }).should.throw(/Database \[objects\] is not connected or defined./i);
+
+      done()
+  })
+
+
   it('should autoload Models with require', function(done){
-    
+
     var models = modeler( [
       animals_db,
       objects_db
